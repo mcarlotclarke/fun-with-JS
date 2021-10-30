@@ -49,17 +49,16 @@ const rollDice = () => {
     // Display dice image with rolled number
     document.getElementById('dice-1').style.display = 'block';
     document.getElementById('dice-2').style.display = 'block';
-    document.getElementById('dice-1').src = `dice-${dice1}.png`;
-    document.getElementById('dice-2').src = `dice-${dice2}.png`;
+    document.getElementById('dice-1').src = `images/dice-${dice1}.png`;
+    document.getElementById('dice-2').src = `images/dice-${dice2}.png`;
 
     // Update score only if the roll !== 1 otherwise change current score and switch activePlayer
     if (dice1 !== 1 && dice2 !== 1) {
       // Add score
       roundScore += dice1 + dice2;
       // Display and add the current active player's score
-      document.querySelector(
-        `#current-${activePlayer}`
-      ).textContent = roundScore;
+      document.querySelector(`#current-${activePlayer}`).textContent =
+        roundScore;
     } else {
       nextPlayer();
     }
